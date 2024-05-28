@@ -12,14 +12,14 @@ export default defineConfig({
     globals: true,
     environment: "jsdom",
     setupFiles: ["./src/setupTests.ts"],
-    include: ["src/**/*.spec.tsx", "src/**/*.spec.ts", "src/**/*.test.ts", "src/**/*.test.tsx"],
+    include: ["src/**/*.spec.tsx", "src/**/*.spec.ts", "src/**/*.test.ts"],
     coverage: {
-        exclude: [
-          //...configDefaults.coverage.exclude,
-          "*/types/*",
-          "src/main.tsx",
-        ],
-      },
+      exclude: [
+        ...configDefaults.coverage.exclude,
+        "*/types/*",
+        "src/main.tsx",
+      ],
+    },
   },
   resolve: {
     alias: [{ find: "@", replacement: path.resolve(__dirname, "./src") }],

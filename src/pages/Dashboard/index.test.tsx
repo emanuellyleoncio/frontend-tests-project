@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import Dashboard from "./index";
 import { loadDataPokemon } from "../../services/PokeomServices";
 import { faker } from "@faker-js/faker";
+import { useNavigate } from "react-router-dom";
 
 const mockFetchData = vi.fn(loadDataPokemon).mockImplementation(async () => {
   return [
@@ -20,7 +21,16 @@ const mockFetchData = vi.fn(loadDataPokemon).mockImplementation(async () => {
   ];
 });
 
+const navigateMock = vi.fn()
+
 describe("Testa o componente Dashboard", () => {
+  vi.mock('react-router-dom', () => {
+    return{
+      useNavigate(){
+        return navigateMock;
+      }
+    }
+  })
   test("Deve haver um título 'Dashboard'", async () => {
     render(<Dashboard loadDataPokemon={mockFetchData} />);
     const title = await screen.findByRole("heading");
@@ -34,4 +44,11 @@ describe("Testa o componente Dashboard", () => {
 
     expect(item).toHaveLength(2);
   });
+
+  test("Deve haver um pikachu na lista", async () => {
+    render(<Dashboard loadDataPokemon={mockFetchData} />);
+
+    const pikachu = await screen.findByText("Pikachu");
+    expect(pikachu).toBeInTheDocument()
+  })
 });
