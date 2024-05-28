@@ -1,30 +1,64 @@
-# React + TypeScript + Vite
+# Aplicando testes no frontend com React e Vitest
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é um projeto que demonstra a aplicação prática de testes em frontend usando Vitest. O projeto consiste em uma página de login, um dashboard que lista Pokémons de uma API, e uma página de detalhes do Pokémon selecionado.
 
-Currently, two official plugins are available:
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Página de Login**: Autenticação de usuário.
+- **Dashboard**: Exibição de uma lista de Pokémons obtidos de uma API.
+- **Detalhe do Pokémon**: Exibição de informações detalhadas sobre um Pokémon selecionado.
 
-## Expanding the ESLint configuration
+## Tecnologias Utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- React
+- Vite
+- Vitest
+- ESLint
 
-- Configure the top-level `parserOptions` property like this:
+## Pré-requisitos
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+Certifique-se de ter as seguintes ferramentas instaladas em seu ambiente de desenvolvimento:
+
+- [Node.js](https://nodejs.org/en/)
+- [Git](https://git-scm.com/)
+
+## Como Executar o Projeto Localmente
+
+Siga os passos abaixo para clonar e executar o projeto localmente:
+
+1. **Clone o repositório**
+
+```bash
+   git clone https://github.com/seu-usuario/seu-repositorio.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. **Navegue até o diretório do projeto**
+
+```bash
+   cd seu-repositorio
+```
+
+3. **Instale as dependências**
+
+```bash
+   npm install
+```
+
+4. **Execute o servidor de desenvolvimento**
+
+```bash
+   npm run dev
+```
+
+## Testes
+
+1. **Este projeto utiliza o Vitest para testes. Para executar os testes, use:**
+
+```bash
+   npm run test
+```
+
+2. **Para gerar um relatório de cobertura de testes, use:**
+
+```bash
+   npm run test:coverage
